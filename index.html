@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio of Arvil Alminana">
+    <title>Arvil Alminana - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #222;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #008cba;
+            transition: color 0.3s;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #008cba;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            background-image: url('https://via.placeholder.com/1400x500'); /* Replace with your own background image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-item {
+            width: 30%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-item h3 {
+            font-size: 1.8rem;
+            margin: 15px 0;
+            color: #333;
+            padding: 0 15px;
+        }
+
+        .project-item p {
+            padding: 0 15px 20px 15px;
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .contact form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact button {
+            padding: 15px 30px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #007ba7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #008cba;
+        }
+
+        footer a:hover {
+            color: #00a2d8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .project-item {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-item {
+                width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin-bottom: 10px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h3>Arvil Alminana</h3>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header">
+        <h1>Welcome to My Portfolio</h1>
+        <p>C# .NET Developer | IT Developer | Technical Support</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Arvil Alminana. With nearly 5 years of experience in system development, I specialize in C# and the .NET framework, particularly in backend development. I've worked on a range of successful projects, including POS systems, Construction Firm Management, and Parish Management Systems. Currently, I'm focused on cross-platform frameworks like .NET MAUI and Blazor to build modern, dynamic solutions.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-item">
+                <img src="https://via.placeholder.com/400x200" alt="Parish Data Certificate System">
+                <h3>Parish Data Certificate System</h3>
+                <p>A specialized system for automating the issuance of parish certificates such as baptisms and marriages, built with C# and .NET Framework.</p>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/400x200" alt="Construction Information System">
+                <h3>Construction Firm Information System</h3>
+                <p>A complete project management system for construction firms, focusing on project, resource, and financial management.</p>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/400x200" alt="POS System">
+                <h3>POS System</h3>
+                <p>A Point of Sale system for small retail stores, featuring inventory management, sales tracking, and customer management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Arvil Alminana" required>
+            <input type="email" name="email" placeholder="alminanaarvil@gmail.com" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <
+    html
+    Copy code
+    footer>
+            <p>&copy; 2024 Arvil Alminana. All rights reserved. | <a href="#contact">Contact Me</a></p>
+        </footer>
+    </body>
+    
+    </html>
