@@ -20,19 +20,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body class="font-poppins bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white scroll-smooth transition-colors duration-500">
-  <!-- Navbar -->
-  <nav class="bg-gray-900 text-white p-4 fixed w-full z-10 top-0 shadow-lg">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-semibold">Arvil Alminana</h1>
-      <div class="hidden md:flex space-x-4">
-        <a href="#about" class="hover:text-cyan-400 transition">About</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
-        <a href="#education" class="hover:text-cyan-400 transition">Education</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
-        <a href="#certificates" class="hover:text-cyan-400 transition">Certifications</a>
-        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
-        <button onclick="document.documentElement.classList.toggle('dark')" class="ml-4 text-sm bg-gray-700 px-2 py-1 rounded hover:bg-gray-600">Toggle Dark Mode</button>
+  <!-- Layout Wrapper -->
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white px-6 py-4 shadow-lg flex items-center justify-between">
+      <h1 class="text-2xl font-bold">Arvil Alminana</h1>
+      <div class="hidden md:flex space-x-4 text-sm font-medium">
+        <a href="#about" class="hover:text-cyan-400">About</a>
+        <a href="#projects" class="hover:text-cyan-400">Projects</a>
+        <a href="#experience" class="hover:text-cyan-400">Experience</a>
+        <a href="#education" class="hover:text-cyan-400">Education</a>
+        <a href="#skills" class="hover:text-cyan-400">Skills</a>
+        <a href="#certificates" class="hover:text-cyan-400">Certifications</a>
+        <a href="#contact" class="hover:text-cyan-400">Contact</a>
+        <button onclick="document.documentElement.classList.toggle('dark')" class="bg-gray-800 px-2 py-1 rounded text-xs hover:bg-gray-700">🌙</button>
       </div>
       <div class="md:hidden">
         <button id="menu-btn" class="focus:outline-none">
@@ -41,8 +42,10 @@
           </svg>
         </button>
       </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-2 text-center">
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white px-6 py-2 text-sm space-y-2">
       <a href="#about" class="block hover:text-cyan-400">About</a>
       <a href="#projects" class="block hover:text-cyan-400">Projects</a>
       <a href="#experience" class="block hover:text-cyan-400">Experience</a>
@@ -50,155 +53,134 @@
       <a href="#skills" class="block hover:text-cyan-400">Skills</a>
       <a href="#certificates" class="block hover:text-cyan-400">Certifications</a>
       <a href="#contact" class="block hover:text-cyan-400">Contact</a>
-      <button onclick="document.documentElement.classList.toggle('dark')" class="bg-gray-700 px-2 py-1 rounded hover:bg-gray-600">Toggle Dark Mode</button>
     </div>
-  </nav>
 
-  <!-- Header -->
-  <header class="text-white text-center py-32 px-6 bg-cover bg-center transition-all duration-700" style="background-image: url('https://drive.google.com/uc?export=view&id=11ImH1lamz6ChvS8FZURmLCt4mV07kedl');">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Welcome to My Portfolio</h1>
-    <p class="text-lg md:text-2xl animate-fade-in delay-100">C# .NET Developer | IT Developer | Technical Support</p>
-    <a href="/mnt/data/Profile.pdf" download class="mt-6 inline-block bg-white text-cyan-700 px-6 py-2 rounded-md font-semibold hover:bg-cyan-100 transition">Download Resume (PDF)</a>
-  </header>
+    <!-- Header Section -->
+    <header class="text-white text-center py-32 px-6 bg-cover bg-center shadow-md" style="background-image: url('https://drive.google.com/uc?export=view&id=11ImH1lamz6ChvS8FZURmLCt4mV07kedl');">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
+      <p class="text-lg md:text-2xl">C# .NET Developer | IT Developer | Technical Support</p>
+      <a href="/mnt/data/Profile.pdf" download class="mt-6 inline-block bg-white text-cyan-700 px-6 py-2 rounded font-medium hover:bg-cyan-100 transition">Download Resume (PDF)</a>
+    </header>
 
-  <!-- About Section with Summary -->
-  <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800 text-center transition-all duration-500">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-lg leading-relaxed">As a seasoned professional with nearly 5 years of hands-on experience in system development, I have mastered the .NET framework with a strong focus on backend development using C#. I am proficient in both front-end and back-end .NET development for Windows applications. My portfolio includes successful freelance projects such as a Point of Sale (POS) Application, a Construction Firm Management System, and a Parish Management System.
-      </p>
-      <p class="text-lg leading-relaxed mt-4">In addition to my development expertise, I’ve worked at a distribution company for nearly a decade managing IT systems and providing technical support. I also use AI tools like ChatGPT to enhance productivity and solve coding challenges. Currently, I’m expanding into cross-platform development using .NET MAUI and Blazor to build scalable applications.</p>
-    </div>
-  </section>
+    <!-- Main Content Sections as Cards -->
+    <main class="flex-1 px-4 py-10 md:px-12 space-y-12">
+      <section id="about" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-lg leading-relaxed">As a seasoned professional with nearly 5 years of hands-on experience in system development, I have mastered the .NET framework with a strong focus on backend development using C#. I am proficient in both front-end and back-end .NET development for Windows applications. My portfolio includes successful freelance projects such as a Point of Sale (POS) Application, a Construction Firm Management System, and a Parish Management System.</p>
+        <p class="text-lg leading-relaxed mt-4">In addition to my development expertise, I’ve worked at a distribution company for nearly a decade managing IT systems and providing technical support. I also use AI tools like ChatGPT to enhance productivity and solve coding challenges. Currently, I’m expanding into cross-platform development using .NET MAUI and Blazor to build scalable applications.</p>
+      </section>
 
-  <!-- Skills Section -->
-<section id="skills" class="py-20 bg-white dark:bg-gray-800 text-center">
-  <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">Skills</h2>
-    <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg text-left list-disc list-inside">
-      <li>C# & .NET Framework</li>
-      <li>SQL Server & Database Management</li>
-      <li>Technical Support & Troubleshooting</li>
-      <li>WinForms / .NET MAUI / Blazor</li>
-      <li>Data Analysis & ERP (SYSPRO)</li>
-      <li>System Design & SDLC</li>
-    </ul>
-  </div>
+      <section id="skills" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+  <h2 class="text-3xl font-bold mb-6">Skills</h2>
+  <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg list-disc list-inside">
+    <li>C# & .NET Framework</li>
+    <li>SQL Server & Database Management</li>
+    <li>Technical Support & Troubleshooting</li>
+    <li>WinForms / .NET MAUI / Blazor</li>
+    <li>Data Analysis & ERP (SYSPRO)</li>
+    <li>System Design & SDLC</li>
+  </ul>
 </section>
 
-<!-- Certificates Section -->
-<section id="certificates" class="py-20 bg-gray-100 dark:bg-gray-700 text-center">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">Certifications</h2>
-    <ul class="text-left space-y-2">
-      <li>ChatGPT and SQL</li>
-      <li>Introduction to Transact-SQL</li>
-      <li>C# Best Practices for Developers</li>
-      <li>Using Docker and .NET Core</li>
-      <li>BPI Leadership Training (2017)</li>
-    </ul>
-  </div>
+<section id="certificates" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+  <h2 class="text-3xl font-bold mb-6">Certifications</h2>
+  <ul class="space-y-2 text-lg list-disc list-inside">
+    <li>ChatGPT and SQL</li>
+    <li>Introduction to Transact-SQL</li>
+    <li>C# Best Practices for Developers</li>
+    <li>Using Docker and .NET Core</li>
+    <li>BPI Leadership Training (2017)</li>
+  </ul>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="py-20 bg-white dark:bg-gray-800 text-center">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-12">Projects</h2>
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
-        <img src="https://drive.google.com/uc?export=view&id=1rzPeAjsqkvRt_pDOq1MtUCYOQuN3jBgn" alt="Parish" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Parish Data Certificate System</h3>
-          <p class="text-sm">Automates issuance of baptism and marriage certificates using .NET and RDLC reporting tools.</p>
-        </div>
-      </div>
-      <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
-        <img src="https://drive.google.com/uc?export=view&id=1e12JhGXUeJPwm-ReaQuNkum-vZikGO1x" alt="Construction" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Construction Firm Information System</h3>
-          <p class="text-sm">End-to-end management system for tracking projects, finances, resources and teams.</p>
-        </div>
-      </div>
-      <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
-        <img src="https://drive.google.com/uc?export=view&id=1NDNiYZBMX87P_tfprkzm-ntMBLsCxODQ" alt="POS System" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">POS System</h3>
-          <p class="text-sm">Retail point-of-sale system for inventory and transaction tracking with customer insights.</p>
-        </div>
-      </div>
+<section id="projects" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+  <h2 class="text-3xl font-bold mb-6">Projects</h2>
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="bg-gray-100 dark:bg-gray-700 rounded p-4 shadow">
+      <img src="https://drive.google.com/uc?export=view&id=1rzPeAjsqkvRt_pDOq1MtUCYOQuN3jBgn" alt="Parish System" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-semibold mt-4">Parish Data Certificate System</h3>
+      <p class="text-sm">Automates issuance of baptism and marriage certificates using .NET and RDLC reporting tools.</p>
+    </div>
+    <div class="bg-gray-100 dark:bg-gray-700 rounded p-4 shadow">
+      <img src="https://drive.google.com/uc?export=view&id=1e12JhGXUeJPwm-ReaQuNkum-vZikGO1x" alt="Construction System" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-semibold mt-4">Construction Firm Information System</h3>
+      <p class="text-sm">End-to-end management system for tracking projects, finances, resources and teams.</p>
+    </div>
+    <div class="bg-gray-100 dark:bg-gray-700 rounded p-4 shadow">
+      <img src="https://drive.google.com/uc?export=view&id=1NDNiYZBMX87P_tfprkzm-ntMBLsCxODQ" alt="POS System" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-semibold mt-4">POS System</h3>
+      <p class="text-sm">Retail POS system with inventory, transaction tracking, and customer features.</p>
     </div>
   </div>
 </section>
 
-<!-- Experience Section -->
-<section id="experience" class="py-20 bg-gray-100 dark:bg-gray-700 text-center">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">Experience</h2>
-    <div class="space-y-6 text-left">
-      <div>
-        <h3 class="text-xl font-semibold">Freelance Software Developer</h3>
-        <p>Confidential | July 2023 – Present</p>
-        <p>Developing .NET applications with SQL Server and RDLC, managing full SDLC, debugging, enhancing systems, and delivering client-centric solutions.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold">IT Supervisor</h3>
-        <p>FAST Distribution Corp. | Oct 2019 – Present</p>
-        <p>Oversee IT operations, provide technical support, manage systems and backups, ensure security and system efficiency, and train users on ERP (SYSPRO).</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold">Innovation & Technology Manager</h3>
-        <p>Business People Inc. | Apr 2018 – Oct 2019</p>
-        <p>Led tech initiatives, staff training, and performance monitoring, providing strategic reports and fostering digital transformation across departments.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold">IT - Data Management Specialist</h3>
-        <p>Business People Inc. | Mar 2015 – Mar 2018</p>
-        <p>Supported IT systems and LAN, escalated system issues, managed sales KRA reporting, and helped ensure compliance and uptime.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold">Sales Admin Encoder / Pre-Selling Encoder</h3>
-        <p>Business People Inc. | Jul 2013 – Feb 2015</p>
-        <p>Managed encoding tasks, assisted in technical operations, monitored sales team performance, and supported business reporting systems.</p>
-      </div>
+<section id="experience" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+  <h2 class="text-3xl font-bold mb-6">Experience</h2>
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold">Freelance Software Developer</h3>
+      <p class="text-gray-600 dark:text-gray-300">Confidential | July 2023 – Present</p>
+      <p>Developing .NET applications, managing full SDLC, debugging, enhancing systems, and delivering client-centric solutions.</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold">IT Supervisor</h3>
+      <p class="text-gray-600 dark:text-gray-300">FAST Distribution Corp. | Oct 2019 – Present</p>
+      <p>Oversee IT operations, manage ERP (SYSPRO), ensure backups and system security, and train users.</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold">Innovation & Technology Manager</h3>
+      <p class="text-gray-600 dark:text-gray-300">Business People Inc. | Apr 2018 – Oct 2019</p>
+      <p>Led digital transformation initiatives and staff training, monitored system performance and reporting.</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold">IT - Data Management Specialist</h3>
+      <p class="text-gray-600 dark:text-gray-300">Business People Inc. | Mar 2015 – Mar 2018</p>
+      <p>Maintained sales data and KRA reporting, handled IT support, and resolved internal technical issues.</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold">Sales Admin Encoder / Pre-Selling Encoder</h3>
+      <p class="text-gray-600 dark:text-gray-300">Business People Inc. | Jul 2013 – Feb 2015</p>
+      <p>Handled encoding tasks and supported sales and reporting teams with data entry and analysis.</p>
     </div>
   </div>
 </section>
 
-<!-- Education Section -->
-<section id="education" class="py-20 bg-white dark:bg-gray-800 text-center">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">Education</h2>
-    <ul class="text-left space-y-4">
-      <li>
-        <h3 class="text-xl font-semibold">Colegio dela Purisima Concepcion</h3>
-        <p>Information Technology - 2013–2014</p>
-      </li>
-      <li>
-        <h3 class="text-xl font-semibold">TESDA – FCATS</h3>
-        <p>Computer Basic Literacy - 2009</p>
-      </li>
-    </ul>
-  </div>
+<section id="education" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+  <h2 class="text-3xl font-bold mb-6">Education</h2>
+  <ul class="space-y-4">
+    <li>
+      <h3 class="text-xl font-semibold">Colegio dela Purisima Concepcion</h3>
+      <p>Information Technology - 2013–2014</p>
+    </li>
+    <li>
+      <h3 class="text-xl font-semibold">TESDA – FCATS</h3>
+      <p>Computer Basic Literacy - 2009</p>
+    </li>
+  </ul>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900 text-center">
-  <div class="max-w-2xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-    <div class="text-left mb-6">
-      <p><strong>Address:</strong> Lot 2 Blk 9 Bago Grande Subd., Brgy. Bago Grande, Panay, Capiz 5801</p>
-      <p><strong>Phone:</strong> 0931 779 9007</p>
-      <p><strong>Email:</strong> arvil.alminana9@gmail.com</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arvilalminana" class="text-cyan-400 hover:underline" target="_blank">linkedin.com/in/arvilalminana</a></p>
-    </div>
-    <form class="space-y-4">
-      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg" required>
-      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg" required>
-      <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg" required></textarea>
-      <button type="submit" class="bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700">Send Message</button>
-    </form>
+<section id="contact" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+  <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+  <div class="space-y-2 mb-6">
+    <p><strong>Address:</strong> Lot 2 Blk 9 Bago Grande Subd., Brgy. Bago Grande, Panay, Capiz 5801</p>
+    <p><strong>Phone:</strong> 0931 779 9007</p>
+    <p><strong>Email:</strong> arvil.alminana9@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arvilalminana" class="text-cyan-500 hover:underline" target="_blank">linkedin.com/in/arvilalminana</a></p>
   </div>
+  <form class="space-y-4">
+    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg" required>
+    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg" required>
+    <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg" required></textarea>
+    <button type="submit" class="bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700">Send Message</button>
+  </form>
 </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+      <p class="text-sm">&copy; 2024 Arvil Alminana. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script>
     document.getElementById("menu-btn").addEventListener("click", () => {
