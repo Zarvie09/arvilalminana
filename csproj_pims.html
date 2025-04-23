@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parish Data Certificate System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Parish System</h1>
+      <div x-data="{ open: false }" class="relative">
+        <button @click="open = !open" class="md:hidden focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div :class="open ? 'block' : 'hidden'" class="absolute right-0 mt-2 bg-white border rounded shadow-lg md:hidden w-48">
+          <a href="#dashboard" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
+          <a href="#baptismal" class="block px-4 py-2 hover:bg-gray-100">Baptismal Records</a>
+          <a href="#confirmation" class="block px-4 py-2 hover:bg-gray-100">Confirmation Records</a>
+          <a href="#marriage" class="block px-4 py-2 hover:bg-gray-100">Marriage Records</a>
+          <a href="#death" class="block px-4 py-2 hover:bg-gray-100">Death Records</a>
+          <a href="#reports" class="block px-4 py-2 hover:bg-gray-100">Search & Reports</a>
+        </div>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#dashboard" class="hover:text-blue-600">Dashboard</a>
+        <a href="#baptismal" class="hover:text-blue-600">Baptismal</a>
+        <a href="#confirmation" class="hover:text-blue-600">Confirmation</a>
+        <a href="#marriage" class="hover:text-blue-600">Marriage</a>
+        <a href="#death" class="hover:text-blue-600">Death</a>
+        <a href="#reports" class="hover:text-blue-600">Reports</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 bg-blue-50">
+    <h2 class="text-3xl font-bold mb-4">Parish Data Certificate System</h2>
+    <p class="text-lg max-w-2xl mx-auto">A centralized system for managing sacramental records: Baptismal, Confirmation, Marriage, and Death. Includes search, printing, and record management.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section id="dashboard" class="py-10 px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Baptismal Records</h3>
+        <p>Manage baptismal entries and print certificates.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Confirmation Records</h3>
+        <p>Store confirmation details and generate documents.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Marriage Records</h3>
+        <p>Track and update marriage documentation.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Death Records</h3>
+        <p>Log and print certificates for deceased parishioners.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Search & Reports</h3>
+        <p>Advanced search for records with export and printing capabilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-white border-t">
+    <p class="text-gray-600">&copy; 2025 Arvil Almiñana. All rights reserved.</p>
+  </footer>
+</body>
+</html>
