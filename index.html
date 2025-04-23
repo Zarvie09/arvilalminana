@@ -12,6 +12,29 @@
         extend: {
           fontFamily: {
             poppins: ['Poppins', 'sans-serif']
+          },
+          colors: {
+            primary: {
+              light: '#f0f4f8',
+              DEFAULT: '#2563eb',
+              dark: '#1e40af'
+            },
+            surface: {
+              light: '#ffffff',
+              dark: '#1f2937'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
           }
         }
       }
@@ -26,13 +49,13 @@
     <nav class="bg-gray-900 text-white px-6 py-4 shadow-lg flex items-center justify-between">
       <h1 class="text-2xl font-bold">Arvil Alminana</h1>
       <div class="hidden md:flex space-x-4 text-sm font-medium">
-        <a href="#about" class="hover:text-cyan-400">About</a>
-        <a href="#projects" class="hover:text-cyan-400">Projects</a>
-        <a href="#experience" class="hover:text-cyan-400">Experience</a>
-        <a href="#education" class="hover:text-cyan-400">Education</a>
-        <a href="#skills" class="hover:text-cyan-400">Skills</a>
-        <a href="#certificates" class="hover:text-cyan-400">Certifications</a>
-        <a href="#contact" class="hover:text-cyan-400">Contact</a>
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#projects" class="hover:text-primary">Projects</a>
+        <a href="#experience" class="hover:text-primary">Experience</a>
+        <a href="#education" class="hover:text-primary">Education</a>
+        <a href="#skills" class="hover:text-primary">Skills</a>
+        <a href="#certificates" class="hover:text-primary">Certifications</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
         <button onclick="document.documentElement.classList.toggle('dark')" class="bg-gray-800 px-2 py-1 rounded text-xs hover:bg-gray-700">🌙</button>
       </div>
       <div class="md:hidden">
@@ -64,13 +87,13 @@
 
     <!-- Main Content Sections as Cards -->
     <main class="flex-1 px-4 py-10 md:px-12 space-y-12">
-      <section id="about" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+      <section id="about" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
         <h2 class="text-3xl font-bold mb-4">About Me</h2>
         <p class="text-lg leading-relaxed">As a seasoned professional with nearly 5 years of hands-on experience in system development, I have mastered the .NET framework with a strong focus on backend development using C#. I am proficient in both front-end and back-end .NET development for Windows applications. My portfolio includes successful freelance projects such as a Point of Sale (POS) Application, a Construction Firm Management System, and a Parish Management System.</p>
         <p class="text-lg leading-relaxed mt-4">In addition to my development expertise, I’ve worked at a distribution company for nearly a decade managing IT systems and providing technical support. I also use AI tools like ChatGPT to enhance productivity and solve coding challenges. Currently, I’m expanding into cross-platform development using .NET MAUI and Blazor to build scalable applications.</p>
       </section>
 
-      <section id="skills" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+      <section id="skills" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
   <h2 class="text-3xl font-bold mb-6">Skills</h2>
   <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg list-disc list-inside">
     <li>C# & .NET Framework</li>
@@ -82,7 +105,7 @@
   </ul>
 </section>
 
-<section id="certificates" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+<section id="certificates" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
   <h2 class="text-3xl font-bold mb-6">Certifications</h2>
   <ul class="space-y-2 text-lg list-disc list-inside">
     <li>ChatGPT and SQL</li>
@@ -93,7 +116,7 @@
   </ul>
 </section>
 
-<section id="projects" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+<section id="projects" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
   <h2 class="text-3xl font-bold mb-6">Projects</h2>
   <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     <div class="bg-gray-100 dark:bg-gray-700 rounded p-4 shadow">
@@ -114,7 +137,7 @@
   </div>
 </section>
 
-<section id="experience" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+<section id="experience" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
   <h2 class="text-3xl font-bold mb-6">Experience</h2>
   <div class="space-y-6">
     <div>
@@ -145,7 +168,7 @@
   </div>
 </section>
 
-<section id="education" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+<section id="education" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
   <h2 class="text-3xl font-bold mb-6">Education</h2>
   <ul class="space-y-4">
     <li>
@@ -159,7 +182,7 @@
   </ul>
 </section>
 
-<section id="contact" class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+<section id="contact" class="max-w-6xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-md p-8 transition-colors duration-500">
   <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
   <div class="space-y-2 mb-6">
     <p><strong>Address:</strong> Lot 2 Blk 9 Bago Grande Subd., Brgy. Bago Grande, Panay, Capiz 5801</p>
@@ -168,10 +191,10 @@
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arvilalminana" class="text-cyan-500 hover:underline" target="_blank">linkedin.com/in/arvilalminana</a></p>
   </div>
   <form class="space-y-4">
-    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg" required>
-    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg" required>
-    <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg" required></textarea>
-    <button type="submit" class="bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700">Send Message</button>
+    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-surface-dark text-gray-800 dark:text-white rounded-lg" required>
+    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-surface-dark text-gray-800 dark:text-white rounded-lg" required>
+    <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-surface-dark text-gray-800 dark:text-white rounded-lg" required></textarea>
+    <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition">Send Message</button>
   </form>
 </section>
     </main>
