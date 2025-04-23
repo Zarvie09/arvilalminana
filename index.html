@@ -4,312 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio of Arvil Alminana, C# .NET Developer">
-    <title>Arvil Alminana - Portfolio</title>
+    <meta name="description" content="Interactive Resume of Arvil Alminana, C# .NET Developer">
+    <title>Arvil Alminana - Interactive Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* Navbar */
-        nav {
-            background-color: #222;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav h3 {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            font-weight: 400;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            color: #008cba;
-            transition: color 0.3s;
-        }
-
-        /* Header Section */
-        .header {
-            background-color: #008cba;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            background-image: url('https://drive.google.com/uc?export=view&id=11ImH1lamz6ChvS8FZURmLCt4mV07kedl');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.5rem;
-            font-weight: 300;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 80px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .projects h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .project-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .project-item {
-            width: 30%;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-item h3 {
-            font-size: 1.8rem;
-            margin: 15px 0;
-            color: #333;
-            padding: 0 15px;
-        }
-
-        .project-item p {
-            padding: 0 15px 20px 15px;
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 20px;
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .contact form {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact button {
-            padding: 15px 30px;
-            background-color: #008cba;
-            color: white;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact button:hover {
-            background-color: #007ba7;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #008cba;
-        }
-
-        footer a:hover {
-            color: #00a2d8;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .project-item {
-                width: 45%;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
             }
-        }
-
-        @media (max-width: 768px) {
-            .project-item {
-                width: 100%;
-            }
-
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin-bottom: 10px;
-            }
-
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .header p {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+        };
+    </script>
 </head>
 
-<body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">
-            <h3>Arvil Alminana</h3>
-        </div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+<body class="font-poppins bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4 md:px-10 flex justify-between items-center">
+        <h3 class="text-2xl font-semibold">Arvil Alminana</h3>
+        <button class="block md:hidden" id="menu-btn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        <div class="hidden md:flex gap-6 text-sm font-medium uppercase" id="nav-links">
+            <a href="#about" class="hover:text-cyan-400">About</a>
+            <a href="#projects" class="hover:text-cyan-400">Projects</a>
+            <a href="#contact" class="hover:text-cyan-400">Contact</a>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="header">
-        <h1>Welcome to My Portfolio</h1>
-        <p>C# .NET Developer | IT Developer | Technical Support</p>
+    <div class="md:hidden bg-gray-800 text-white px-4 py-2 hidden flex-col space-y-2" id="mobile-menu">
+        <a href="#about" class="hover:text-cyan-400">About</a>
+        <a href="#projects" class="hover:text-cyan-400">Projects</a>
+        <a href="#contact" class="hover:text-cyan-400">Contact</a>
+    </div>
+
+    <!-- Header -->
+    <header class="text-center text-white py-20 bg-cover bg-center relative" style="background-image: url('https://drive.google.com/uc?export=view&id=11ImH1lamz6ChvS8FZURmLCt4mV07kedl');">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
+        <p class="text-lg md:text-xl">C# .NET Developer | IT Developer | Technical Support</p>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-16 text-center bg-gray-100">
+        <h2 class="text-3xl font-bold mb-6">About Me</h2>
+        <p class="max-w-3xl mx-auto text-lg">Hi, I'm Arvil Alminana. With nearly 5 years of experience in system development, I specialize in C# and the .NET framework, particularly in backend development. I've worked on a range of successful projects, including POS systems, Construction Firm Management, and Parish Management Systems. Currently, I'm focused on cross-platform frameworks like .NET MAUI and Blazor to build modern, dynamic solutions.</p>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm Arvil Alminana. With nearly 5 years of experience in system development, I specialize in C# and the .NET framework, particularly in backend development. I've worked on a range of successful projects, including POS systems, Construction Firm Management, and Parish Management Systems. Currently, I'm focused on cross-platform frameworks like .NET MAUI and Blazor to build modern, dynamic solutions.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-container">
-            <div class="project-item">
+    <!-- Projects -->
+    <section id="projects" class="py-16 bg-white text-center">
+        <h2 class="text-3xl font-bold mb-10">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
                 <a href="https://www.upwork.com/freelancers/~01be17221965ebcf5a?p=1765611644538880000" target="_blank">
-                    <img src="https://drive.google.com/uc?export=view&id=1rzPeAjsqkvRt_pDOq1MtUCYOQuN3jBgn" alt="Parish Data Certificate System">
-                    <h3>Parish Data Certificate System</h3>
-                    <p>A specialized system for automating the issuance of parish certificates such as baptisms and marriages, built with C# and .NET Framework.</p>
+                    <img src="https://drive.google.com/uc?export=view&id=1rzPeAjsqkvRt_pDOq1MtUCYOQuN3jBgn" class="w-full h-48 object-cover" alt="Parish">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2">Parish Data Certificate System</h3>
+                        <p class="text-gray-600">Automates parish certificates like baptisms and marriages using C# and .NET Framework.</p>
+                    </div>
                 </a>
             </div>
-            <div class="project-item">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
                 <a href="https://www.upwork.com/freelancers/~01be17221965ebcf5a?p=1765609205083254784" target="_blank">
-                    <img src="https://drive.google.com/uc?export=view&id=1e12JhGXUeJPwm-ReaQuNkum-vZikGO1x" alt="Construction Firm Information System">
-                    <h3>Construction Firm Information System</h3>
-                    <p>A complete project management system for construction firms, focusing on project, resource, and financial management.</p>
+                    <img src="https://drive.google.com/uc?export=view&id=1e12JhGXUeJPwm-ReaQuNkum-vZikGO1x" class="w-full h-48 object-cover" alt="Construction">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2">Construction Firm Information System</h3>
+                        <p class="text-gray-600">Project management for construction firms including finances, resources, and schedules.</p>
+                    </div>
                 </a>
             </div>
-            <div class="project-item">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
                 <a href="https://www.upwork.com/freelancers/~01be17221965ebcf5a?p=1765607365766193152" target="_blank">
-                    <img src="https://drive.google.com/uc?export=view&id=1NDNiYZBMX87P_tfprkzm-ntMBLsCxODQ" alt="POS System">
-                    <h3>POS System</h3>
-                    <p>A Point of Sale system for small retail stores, featuring inventory management, sales tracking, and customer management.</p>
+                    <img src="https://drive.google.com/uc?export=view&id=1NDNiYZBMX87P_tfprkzm-ntMBLsCxODQ" class="w-full h-48 object-cover" alt="POS System">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2">POS System</h3>
+                        <p class="text-gray-600">Retail POS system with inventory, sales, and customer management using C#.</p>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form action="#contact">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+    <!-- Contact -->
+    <section id="contact" class="py-16 text-center bg-gray-100">
+        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+        <form class="max-w-xl mx-auto px-4 space-y-4">
+            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 border rounded-md">
+            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 border rounded-md">
+            <textarea name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-3 border rounded-md"></textarea>
+            <button type="submit" class="px-6 py-3 bg-cyan-600 text-white font-semibold rounded-md hover:bg-cyan-700 transition">Send Message</button>
         </form>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Arvil Alminana. All rights reserved. | <a href="#contact">Contact Me</a></p>
+    <footer class="bg-gray-900 text-white text-center py-6">
+        <p class="text-sm">&copy; 2024 Arvil Alminana. All rights reserved. | <a href="#contact" class="text-cyan-400 hover:underline">Contact Me</a></p>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
+
 </html>
